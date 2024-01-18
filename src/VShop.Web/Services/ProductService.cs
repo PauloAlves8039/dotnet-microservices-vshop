@@ -63,14 +63,14 @@ namespace VShop.Web.Services
         {
             var client = _clientFactory.CreateClient("ProductApi");
 
-            StringContent content = new StringContent(JsonSerializer.Serialize(productVM), Encoding.UTF8, "application/json");
+            StringContent content = new StringContent(JsonSerializer.Serialize(productViewModel), Encoding.UTF8, "application/json");
 
             using (var response = await client.PostAsync(apiEndpoint, content))
             {
                 if (response.IsSuccessStatusCode)
                 {
                     var apiResponse = await response.Content.ReadAsStreamAsync();
-                    productVM = await JsonSerializer.DeserializeAsync<ProductViewModel>(apiResponse, _options);
+                    productViewModel = await JsonSerializer.DeserializeAsync<ProductViewModel>(apiResponse, _options);
                 }
                 else
                 {
@@ -78,7 +78,7 @@ namespace VShop.Web.Services
                 }
             }
 
-            return productVM;
+            return productViewModel;
         }
 
         public async Task<ProductViewModel> UpdateProduct(ProductViewModel productViewModel)
@@ -87,7 +87,7 @@ namespace VShop.Web.Services
 
             ProductViewModel productUpdated = new ProductViewModel();
 
-            using (var response = await client.PutAsJsonAsync(apiEndpoint, productVM))
+            using (var response = await client.PutAsJsonAsync(apiEndpoint, productViewModel))
             {
                 if (response.IsSuccessStatusCode)
                 {
