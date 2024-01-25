@@ -11,11 +11,13 @@ namespace VShop.Web.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IProductService _productService;
+        private readonly ICartService _cartService;
 
-        public HomeController(ILogger<HomeController> logger, IProductService productService)
+        public HomeController(ILogger<HomeController> logger, IProductService productService, ICartService cartService)
         {
             _logger = logger;
             _productService = productService;
+            _cartService = cartService;
         }
 
         public async Task<IActionResult> Index()
@@ -42,6 +44,43 @@ namespace VShop.Web.Controllers
             }
 
             return View(product);
+        }
+
+        [HttpPost]
+        [ActionName("ProductDetails")]
+        [Authorize]
+        public async Task<ActionResult<ProductViewModel>> ProductDetailsPost
+        (ProductViewModel productViewModel)
+        {
+            var token = await HttpContext.GetTokenAsync("access_token");
+
+            CartViewModel cart = new()
+            {
+                CartHeader = new CartHeaderViewModel
+                {
+                    UserId = User.Claims.Where(u => u.Type == "sub")?.FirstOrDefault()?.Value
+                }
+            };
+
+            CartItemViewModel cartItem = new()
+            {
+                Quantity = productViewModel.Quantity,
+                ProductId = productViewModel.Id,
+                Product = await _productService.FindProductById(productViewModel.Id, token)
+            };
+
+            List<CartItemViewModel> cartItemsVM = new List<CartItemViewModel>();
+            cartItemsVM.Add(cartItem);
+            cart.CartItems = cartItemsVM;
+
+            var result = await _cartService.AddItemToCartAsync(cart, token);
+
+            if (result is not null)
+            {
+                return RedirectToAction(nameof(Index));
+            }
+
+            return View(productViewModel);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
