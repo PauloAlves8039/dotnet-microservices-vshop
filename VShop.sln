@@ -13,7 +13,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Backend", "Backend", "{8D22
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VShop.IdentityServer", "src\VShop.IdentityServer\VShop.IdentityServer.csproj", "{37ADBB89-0109-428A-B2B0-C37CE0DE5C92}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VShop.CartApi", "src\VShop.CartApi\VShop.CartApi.csproj", "{0DDE9570-E96D-43B2-80E4-861C2FD39736}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VShop.CartApi", "src\VShop.CartApi\VShop.CartApi.csproj", "{0DDE9570-E96D-43B2-80E4-861C2FD39736}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VShop.DiscountApi", "src\VShop.DiscountApi\VShop.DiscountApi.csproj", "{4414FB35-2059-45EE-888C-5224AA3E8A81}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +39,10 @@ Global
 		{0DDE9570-E96D-43B2-80E4-861C2FD39736}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0DDE9570-E96D-43B2-80E4-861C2FD39736}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0DDE9570-E96D-43B2-80E4-861C2FD39736}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4414FB35-2059-45EE-888C-5224AA3E8A81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4414FB35-2059-45EE-888C-5224AA3E8A81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4414FB35-2059-45EE-888C-5224AA3E8A81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4414FB35-2059-45EE-888C-5224AA3E8A81}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,6 +52,7 @@ Global
 		{1F2F6535-3295-4218-83C7-A8564360777F} = {387812C8-3C44-4821-BBD8-8BEACFE4B07E}
 		{37ADBB89-0109-428A-B2B0-C37CE0DE5C92} = {8D2272F7-E36E-4629-97F8-D5B4EC85C2F0}
 		{0DDE9570-E96D-43B2-80E4-861C2FD39736} = {8D2272F7-E36E-4629-97F8-D5B4EC85C2F0}
+		{4414FB35-2059-45EE-888C-5224AA3E8A81} = {8D2272F7-E36E-4629-97F8-D5B4EC85C2F0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7A0118AF-53B3-4D12-87CE-8464701C0143}
