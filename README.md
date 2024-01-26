@@ -57,6 +57,30 @@ Algumas melhorias podem ser feitas de acordo com as suas necessidades no decorre
 git clone https://github.com/PauloAlves8039/dotnet-microservices-vshop.git
 ```
 
+## :camera: Formulário de Login
+
+<p align="center"> <img src="https://github.com/PauloAlves8039/dotnet-microservices-vshop/blob/master/src/VShop.Web/wwwroot/images/screenshot1.PNG" /></p>
+
+## :camera: Catálogo de Produtos
+
+<p align="center"> <img src="https://github.com/PauloAlves8039/dotnet-microservices-vshop/blob/master/src/VShop.Web/wwwroot/images/screenshot2.PNG" /></p>
+
+## :camera: Lista de Produtos
+
+<p align="center"> <img src="https://github.com/PauloAlves8039/dotnet-microservices-vshop/blob/master/src/VShop.Web/wwwroot/images/screenshot3.PNG" /></p>
+
+## :camera: Carrinho de Compras
+
+<p align="center"> <img src="https://github.com/PauloAlves8039/dotnet-microservices-vshop/blob/master/src/VShop.Web/wwwroot/images/screenshot4.PNG" /></p>
+
+## :camera: Tela de checkout
+
+<p align="center"> <img src="https://github.com/PauloAlves8039/dotnet-microservices-vshop/blob/master/src/VShop.Web/wwwroot/images/screenshot5.PNG" /></p>
+
+## :camera: Confirmação da Compra
+
+<p align="center"> <img src="https://github.com/PauloAlves8039/dotnet-microservices-vshop/blob/master/src/VShop.Web/wwwroot/images/screenshot6.PNG" /></p>
+
 ## :boy: Author
 
 <a href="https://github.com/PauloAlves8039"><img src="https://avatars.githubusercontent.com/u/57012714?v=4" width=70></a>
