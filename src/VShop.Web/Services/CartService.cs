@@ -148,29 +148,26 @@ namespace VShop.Web.Services
             return false;
 
         }
-        public async Task<CartHeaderViewModel> CheckoutAsync(CartHeaderViewModel cartHeaderVM, string token)
+        public async Task<CartHeaderViewModel> CheckoutAsync(CartHeaderViewModel cartHeaderViewModel, string token)
         {
             var client = _clientFactory.CreateClient("CartApi");
             PutTokenInHeaderAuthorization(token, client);
 
-            StringContent content = new StringContent(JsonSerializer.Serialize(cartHeaderVM),
-                                                 Encoding.UTF8, "application/json");
+            StringContent content = new StringContent(JsonSerializer.Serialize(cartHeaderViewModel), Encoding.UTF8, "application/json");
 
             using (var response = await client.PostAsync($"{apiEndpoint}/checkout/", content))
             {
                 if (response.IsSuccessStatusCode)
                 {
                     var apiResponse = await response.Content.ReadAsStreamAsync();
-                    cartHeaderVM = await JsonSerializer
-                                  .DeserializeAsync<CartHeaderViewModel>
-                                  (apiResponse, _options);
+                    cartHeaderViewModel = await JsonSerializer.DeserializeAsync<CartHeaderViewModel>(apiResponse, _options);
                 }
                 else
                 {
                     return null;
                 }
             }
-            return cartHeaderVM;
+            return cartHeaderViewModel;
 
         }
     }
